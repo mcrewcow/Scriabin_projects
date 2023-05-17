@@ -15,3 +15,4 @@ panc_fl_ccim <- ScaleData(panc_fl_ccim) %>%
                              
 lyd_RGC <- SeuratWrappers::RunALRA(lyd_RGC)
 lyd_RGC__ip   <- FindAllInteractionPrograms(lyd_RGC  , iterate.threshold = 300, group.by = "background", assay = "alra", species = 'mouse')
+lyd_RGC__ip <- InteractionProgramSignificance(lyd_RGC__ip, n.replicate = 500)
